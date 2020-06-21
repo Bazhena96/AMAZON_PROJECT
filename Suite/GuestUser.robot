@@ -11,7 +11,7 @@ Resource  ../Resources/Keywords.robot
      \  User Search  ${SEARCH_TERM}
      \  Verify That Search Completed
      \  Add Product to cart 
-Verify That ProductS In The Cart
+Verify That Products In The Cart
     Open and Load
     Maximize Browser Window
     Check The Cart  Your Amazon Cart is empty
