@@ -5,7 +5,7 @@ Resource  Variables.robot
 ***Keywords***
 Open and Load
     Open Browser  https://www.amazon.com  chrome  executable_path=/usr/local/Caskroom/chromedriver/83.0.4103.39/chromedriver
-    Sleep  5
+    Set Browser Implicit Wait  5
 User Search
     [Arguments]  ${SEARCH_TERM}
     Wait Until Page Contains Element  //*[@id="twotabsearchtextbox"]
@@ -21,8 +21,8 @@ Add Product To Cart
     Click Element  css=#add-to-cart-button
 Check The Cart
     [Arguments]  ${CARTS CONTAIN}
-    Wait Until Page Contains Element  xpath=/html/body/div[1]/header/div/div[1]/div[2]/div/a[4]/span[3]
-    Click Element  xpath=/html/body/div[1]/header/div/div[1]/div[2]/div/a[4]/span[3]
+    Wait Until Page Contains Element  css=#nav-cart
+    Click Element  css=#nav-cart
     Page Should Contain  ${CARTS CONTAIN}
 Verify Adress
     [Arguments]  ${Country to delivery}
@@ -30,7 +30,8 @@ Verify Adress
     Click Element  css=#glow-ingress-line1 
     Page Should Contain  ${Country to delivery}
 Create Account
-    Click Element  css=.nav-long-width
+    Wait Until Page Contains Element  css=#nav-link-accountList
+    Click Element  css=#nav-link-accountList
     Wait Until Page Contains Element  css=#createAccountSubmit
     Click Element  css=#createAccountSubmit
     Wait Until Page Contains  Create account
@@ -40,8 +41,8 @@ Create Account
     Input Text  css=#ap_password_check  ${USER_PASSWORD}
     Click Element  css=#continue
 Sign In
-    Wait Until Page Contains Element  css=.nav-long-width
-    Click Element  css=.nav-long-width
+    Wait Until Page Contains Element  css=#nav-link-accountList
+    Click Element  css=#nav-link-accountList
     Input Text  css=#ap_email  ${USER_EMAIL}
     Wait Until Page Contains Element  css=.a-button-input
     Click Element  css=.a-button-input
@@ -79,8 +80,8 @@ Change Password
     Input Text  css=#ap_email  ${USER_EMAIL}
     Click Element  css=#continue
 Sign Out
-    Mouse down   css=#nav-link-accountList
-    Wait Until Page Contains  xpath=//*[@id="nav-item-signout"]
-    Click element  xpath=//*[@id="nav-item-signout"]
+    Mouse Down   css=#nav-link-accountList
+    Wait Until Page Contains Element   //*[@id="nav-item-signout"]/span
+    Click Element  //*[@id="nav-item-signout"]/span
     
     
