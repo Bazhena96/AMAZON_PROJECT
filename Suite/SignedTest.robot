@@ -3,14 +3,15 @@ Library  SeleniumLibrary
 Resource  ../Resources/Keywords.robot
 
 *** Test Cases ***
-Signed User Search The Product 
-    @{SEARCH_TERMS}  Create list  Reebok  Nike  Puma
+Signed user search the product
+    @{search terms}  Create list  Reebok  Nike  Puma
     Open and Load
     Maximize Browser Window
     Sign In
-    FOR   ${SEARCH_TERM}  IN  @{SEARCH_TERMS}
-     \  User Search  ${SEARCH_TERM}
-     \  Verify That Search Completed
-     \  Add Product to cart   
+    FOR   ${search term}  IN  @{search terms}
+       User Search  ${search term}
+       Verify That Search Completed
+       Add Product to cart
+    END
    Check The Cart  Subtotal (3 items):
     
