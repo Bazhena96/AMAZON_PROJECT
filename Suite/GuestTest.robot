@@ -4,17 +4,15 @@ Resource  ../Resources/Keywords.robot
 
 *** Test Cases ***
 Guest user search the product
-    @{search term}  Create list  Reebok  Nike  Puma
-    Open and Load
-    Maximize Browser Window
+    @{search terms}  Create list  Reebok  Nike  Puma
+    Load And Maximize Browser Window
     FOR   ${search  term}  IN  @{search terms}
        User Search  ${search term}
        Verify That Search Completed
        Add Product to cart
-    FOR
+    END
 Verify that products in the cart
-    Open and Load
-    Maximize Browser Window
+    Load And Maximize Browser Window
     Check The Cart  Your Amazon Cart is empty
     Close Browser 
     
