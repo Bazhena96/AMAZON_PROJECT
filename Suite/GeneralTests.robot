@@ -14,12 +14,12 @@ Verify address to delivery
 User create account
     Open and Load
     Maximize Browser Window
-    Create Account
+    Create Account  Bazhena  bazhenkak@gmail.com  change13CHANGE13
     Close Browser 
-User sign in to the  account
+User sign in to the account
     Open and Load
     Maximize Browser Window
-    Sign In
+    Sign In  bazhenkak@gmail.com  change13
     Close Browser 
 User change the language settings
     Open and Load
@@ -38,6 +38,6 @@ User forgot the password
     Close Browser 
 User sign out of the account
     Open and Load
-    Sign In
+    Sign In  bazhenkak@gmail.com change 13
     Sign out
     Close Browser 
