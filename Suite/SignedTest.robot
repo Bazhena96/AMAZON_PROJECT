@@ -5,13 +5,14 @@ Resource  ../Resources/Keywords.robot
 *** Test Cases ***
 Signed user search the product
     @{search terms}  Create list  Reebok  Nike  Puma
-    Open and Load
-    Maximize Browser Window
-    Sign In
+    Load And Maximize Browser Window
+    Sign In  bazhenkak@gmail.com  change13
     FOR   ${search term}  IN  @{search terms}
        User Search  ${search term}
        Verify That Search Completed
        Add Product to cart
     END
-   Check The Cart  Subtotal (3 items):
-    
+Verify that products in the cart
+    Load And Maximize Browser Window
+    Check The Cart  3 item
+    Close Browser
