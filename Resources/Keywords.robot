@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  Variables.robot
 
 *** Keywords ***
 Open and Load
