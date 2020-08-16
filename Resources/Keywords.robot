@@ -34,6 +34,7 @@ Verify Adress
     Click Element  css=#glow-ingress-line1 
     Page Should Contain  ${country to delivery}
 Create Account
+    [Arguments]  ${user email}  ${user name}  ${user password}
     Wait Until Page Contains Element  css=#nav-link-accountList
     Click Element  css=#nav-link-accountList
     Wait Until Page Contains Element  css=#createAccountSubmit
@@ -45,6 +46,7 @@ Create Account
     Input Text  css=#ap_password_check  ${user password}
     Click Element  css=#continue
 Sign In
+    [Arguments]  ${user email}  ${user password}
     Wait Until Page Contains Element  css=#nav-link-accountList
     Click Element  css=#nav-link-accountList
     Input Text  css=#ap_email  ${user email}
@@ -73,6 +75,7 @@ Change Currency Settings
 Verify That Currency Settings Changed
     Page Should Contain Element  css=#icp-touch-link-cop > span:nth-child(2)
 Change Password
+    [Arguments]   ${user email}
     Wait Until Page Contains Element  css=.nav-line-1-container > span:nth-child(1)
     Click Element  css=.nav-line-1-container > span:nth-child(1)
     Wait Until Page Contains   Sign-In 
