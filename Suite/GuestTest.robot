@@ -8,9 +8,10 @@ Guest user search the product
     Open and Load
     Maximize Browser Window
     FOR   ${search  term}  IN  @{search terms}
-     \  User Search  ${search term}
-     \  Verify That Search Completed
-     \  Add Product to cart 
+       User Search  ${search term}
+       Verify That Search Completed
+       Add Product to cart
+    FOR
 Verify that products in the cart
     Open and Load
     Maximize Browser Window
