@@ -28,7 +28,7 @@ Verify Adress
     Wait UAnd Click  css=#glow-ingress-line1
     Page Should Contain  ${country to delivery}
 Create Account
-    [Arguments]  ${user email}  ${user name}  ${user password}
+    [Arguments]  ${user name}  ${user email}  ${user password}
     Wait And Click  css=#nav-link-accountList
     Wait And Click  css=#createAccountSubmit
     Wait Until Page Contains  Create account
