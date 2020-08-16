@@ -6,7 +6,7 @@ Resource  ../Resources/Keywords.robot
 Signed user search the product
     @{search terms}  Create list  Reebok  Nike  Puma
     Load And Maximize Browser Window
-    Sign In  bazhenkak@gmail.com  change13
+    Sign In  bazhenkak@gmail.com    change13
     FOR   ${search term}  IN  @{search terms}
        User Search  ${search term}
        Verify That Search Completed
@@ -14,5 +14,5 @@ Signed user search the product
     END
 Verify that products in the cart
     Load And Maximize Browser Window
-    Check The Cart  3 item
+    Check The Cart  Subtotal (3 items):
     Close Browser
