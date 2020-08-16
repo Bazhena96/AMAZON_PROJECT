@@ -1,11 +1,15 @@
-***Settings***
+*** Settings ***
 Library  SeleniumLibrary
 Resource  Variables.robot
 
-***Keywords***
+*** Keywords ***
 Open and Load
     Open Browser  https://www.amazon.com  chrome  executable_path=/usr/local/Caskroom/chromedriver/83.0.4103.39/chromedriver
     Set Browser Implicit Wait  5
+Wait And Click
+    [Arguments]  ${locator}
+    Wait Until Page Contains Element  ${locator}
+    Click Element  ${locator}
 User Search
     [Arguments]  ${SEARCH_TERM}
     Wait Until Page Contains Element  //*[@id="twotabsearchtextbox"]
