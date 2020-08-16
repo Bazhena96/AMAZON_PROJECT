@@ -9,6 +9,10 @@ Wait And Click
     [Arguments]  ${locator}
     Wait Until Page Contains Element  ${locator}
     Click Element  ${locator}
+Load And Maximize Browser Window
+     Open and Load
+     Maximize Browser Window
+
 User Search
     [Arguments]  ${search term}
     Wait And Click  //*[@id="twotabsearchtextbox"]
