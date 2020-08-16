@@ -15,9 +15,9 @@ Load And Maximize Browser Window
 
 User Search
     [Arguments]  ${search term}
-    Wait And Click  //*[@id="twotabsearchtextbox"]
-    Input Text  //*[@id="twotabsearchtextbox"]  ${search term}
-    Wait And Click  css=.nav-search-submit > input:nth-child(2)
+    Wait And Click  css=#twotabsearchtextbox
+    Input Text  css=#twotabsearchtextbox  ${search term}
+    Wait And Click  css=#nav-search-submit-text
 Verify That Search Completed
     Wait Until Page Contains  results for
 Add Product To Cart
@@ -29,7 +29,7 @@ Check The Cart
     Page Should Contain  ${carts contain}
 Verify Adress
     [Arguments]  ${country to delivery}
-    Wait UAnd Click  css=#glow-ingress-line1
+    Wait And Click  css=#glow-ingress-line1
     Page Should Contain  ${country to delivery}
 Create Account
     [Arguments]  ${user name}  ${user email}  ${user password}
