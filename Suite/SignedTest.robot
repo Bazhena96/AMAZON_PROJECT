@@ -3,7 +3,8 @@ Library  SeleniumLibrary
 Resource  ../Resources/Keywords.robot
 
 *** Test Cases ***
-Signed user added product to the cart and verify, that product added
+Signed user search the product
+    [Tags]  Signed
     @{search terms}  Create list  Reebok  Nike  Puma
     Load And Maximize Browser Window
     Sign In  bazhenkak@gmail.com    change13
@@ -12,5 +13,10 @@ Signed user added product to the cart and verify, that product added
        Verify That Search Completed
        Add Product to cart
     END
+    Check The Cart  Subtotal (3 items):
+    Close Browser
+Verify that products in the cart
+    Load And Maximize Browser Window
+    Sign In
     Check The Cart  Subtotal (3 items):
     Close Browser
