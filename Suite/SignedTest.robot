@@ -13,10 +13,9 @@ Signed user search the product
        Verify That Search Completed
        Add Product to cart
     END
-    Check The Cart  Subtotal (3 items):
     Close Browser
 Verify that products in the cart
     Load And Maximize Browser Window
-    Sign In
+    Sign In  bazhenkak@gmail.com    change13
     Check The Cart  Subtotal (3 items):
     Close Browser
