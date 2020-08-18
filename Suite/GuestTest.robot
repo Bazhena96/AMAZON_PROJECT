@@ -14,5 +14,8 @@ Guest user search the product
     END
     Check The Cart  Your Amazon Cart is empty
     Close Browser
-
+Verify that products in the cart
+    Load And Maximize Browser Window
+    Check The Cart  Your Amazon Cart is empty
+    Close Browser
     
