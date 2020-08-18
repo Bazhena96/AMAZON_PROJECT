@@ -10,18 +10,20 @@ Wait And Click
     Wait Until Page Contains Element  ${locator}
     Click Element  ${locator}
 Load And Maximize Browser Window
-     Open and Load
-     Maximize Browser Window
-
+    Open and Load
+    Maximize Browser Window
 User Search
     [Arguments]  ${search term}
     Wait And Click  css=#twotabsearchtextbox
     Input Text  css=#twotabsearchtextbox  ${search term}
-    Wait And Click  css=#nav-search-submit-text
+    Press Keys  css=#twotabsearchtextbox  ENTER
 Verify That Search Completed
     Wait Until Page Contains  results for
 Add Product To Cart
-    Wait And Click  css=div.sg-col-4-of-24:nth-child(4) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(1) > a:nth-child(1) > span:nth-child(1)
+    [Arguments]  ${search term}
+    &{product links}  Create Dictionary  Reebok=css=#anonCarousel1 > ol:nth-child(1) > li:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > a:nth-child(1)  Nike=css=div.sg-col-4-of-24:nth-child(3) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(1) > a:nth-child(1)  Puma=css=div.s-result-item:nth-child(2) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(2) > a:nth-child(1)
+
+    Wait And Click  ${product links}[${search term}]
     Wait And Click  css=#add-to-cart-button
 Check The Cart
     [Arguments]  ${carts contain}
