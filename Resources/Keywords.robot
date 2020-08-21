@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-
 *** Keywords ***
 Open and Load
     Open Browser  https://www.amazon.com  chrome  executable_path=/usr/local/Caskroom/chromedriver/83.0.4103.39/chromedriver
@@ -22,7 +21,6 @@ Verify That Search Completed
 Add Product To Cart
     [Arguments]  ${search term}
     &{product links}  Create Dictionary  Reebok=css=#anonCarousel1 > ol:nth-child(1) > li:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > a:nth-child(1)  Nike=css=div.sg-col-4-of-24:nth-child(3) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(1) > a:nth-child(1)  Puma=css=div.s-result-item:nth-child(2) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > h2:nth-child(2) > a:nth-child(1)
-
     Wait And Click  ${product links}[${search term}]
     Wait And Click  css=#add-to-cart-button
 Check The Cart
@@ -53,11 +51,11 @@ Sign In
     Wait And Click  css=#signInSubmit
 ENG to ESP
     Wait And Click  css=.icp-nav-link-inner
-    Wait Until Page Contains   Language Settings
+    Wait Until Page Contains  Language Settings
     Wait And Click  css=div.a-row:nth-child(8) > div:nth-child(1) > label:nth-child(1) > span:nth-child(3)
     Wait And Click  css=.a-button-input
 Verify That Language Settings Changed
-   Page Should Contain Element  css=#icp-touch-link-language > span:nth-child(2)
+    Page Should Contain Element  css=#icp-touch-link-language > span:nth-child(2)
 Change Currency Settings
     Wait And Click  css=.icp-nav-link-inner
     Wait And Click  css=#a-autoid-0-announce
@@ -66,9 +64,9 @@ Change Currency Settings
 Verify That Currency Settings Changed
     Page Should Contain Element  css=#icp-touch-link-cop > span:nth-child(2)
 Change Password
-    [Arguments]   ${user email}
+    [Arguments]  ${user email}
     Wait And Click  css=.nav-line-1-container > span:nth-child(1)
-    Wait Until Page Contains   Sign-In
+    Wait Until Page Contains  Sign-In
     Input Text  css=#ap_email  ${user email}
     Wait And Click  css=.a-button-input
     Wait And Click  css=#auth-fpp-link-bottom
@@ -76,7 +74,7 @@ Change Password
     Input Text  css=#ap_email  ${user email}
     Wait And Click  css=#continue
 Sign Out
-    Mouse Down   css=#nav-link-accountList
-    Wait And Click   //*[@id="nav-item-signout"]/span
+    Mouse Down  css=#nav-link-accountList
+    Wait And Click  //*[@id="nav-item-signout"]/span
 
     
