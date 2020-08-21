@@ -1,7 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../Resources/Keywords.robot
-
 *** Test Cases ***
 Verify that page loaded
     Load And Maximize Browser Window
@@ -12,11 +11,11 @@ Verify address to delivery
     Close Browser
 User create account
     Load And Maximize Browser Window
-    Create Account  Bazhena  bazhenkak@gmail.com    change13CHANGE13
+    Create Account  Bazhena  bazhenkak@gmail.com  change13CHANGE13
     Close Browser
 User sign in to the account
     Load And Maximize Browser Window
-    Sign In  bazhenkak@gmail.com    change13
+    Sign In  bazhenkak@gmail.com  change13
     Close Browser
 User change the language settings
     Load And Maximize Browser Window
@@ -35,6 +34,6 @@ User forgot the password
     Close Browser
 User sign out of the account
     Load And Maximize Browser Window
-    Sign In  bazhenkak@gmail.com    change 13
+    Sign In  bazhenkak@gmail.com  change 13
     Sign out
     Close Browser
